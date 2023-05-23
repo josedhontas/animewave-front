@@ -14,7 +14,7 @@ export default function Home() {
     }, [])
     const getAnimes = () => {
         axios
-            .get("https://api.animewave.ninja/animes")
+            .get("https://api-wave-giwhu.ondigitalocean.app/animes")
             .then((res) => setAnimes(res.data))
             .catch((err) => console.log(err))
     }

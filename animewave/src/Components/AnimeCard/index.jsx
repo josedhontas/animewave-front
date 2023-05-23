@@ -20,13 +20,13 @@ export default function AnimeCard({titulo, descricao, urlImagem}) {
             {titulo}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {descricao}
+            {}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Assistir
         </Button>
       </CardActions>
     </Card>

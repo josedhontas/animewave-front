@@ -51,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({animeFilter}) {
+export default function Navbar({animeFilter, hideSearch}) {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '2em' }}>
       <AppBar position="static">
@@ -73,15 +73,15 @@ export default function Navbar({animeFilter}) {
           >
             AnimeWave
           </Typography>
-          <Search onChange={(e)=> animeFilter(e.target.value)}>
+          {!hideSearch && (<Search onChange={(e)=> animeFilter(e.target.value)}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Pesquisar"
+              placeholder="Pesquisar" 
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search>)}
         </Toolbar>
       </AppBar>
     </Box>

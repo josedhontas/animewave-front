@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import AnimeCard from '../Components/AnimeCard';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Box } from '@mui/material';
 import axios from 'axios';
 import { Skeletons } from '../Components/Skeletons';
+import { useNavigate } from 'react-router-dom';
 
-export default function Home() {
+export default function Home({setAnimeData}) {
 
-    const [animes, setAnimes] = useState([])
+    const [animes, setAnimes] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
         getAnimes();
 
@@ -38,6 +40,12 @@ export default function Home() {
         setAnimes(filteredAnimes);
     };
 
+    const animePickHandler = (anime) =>{
+        setAnimeData(anime);
+        navigate("/profile");
+        
+    }
+
     return (
         <div>
             <Navbar animeFilter={animeFilter} />
@@ -46,7 +54,9 @@ export default function Home() {
                     {animes.length === 0 ? <Skeletons /> :
                         animes.map((anime) => (
                             <Grid item xs={12} sm={6} md={4} lg={2}>
+                                <Box onClick = {()=>animePickHandler(anime)}>
                                 <AnimeCard titulo={anime.titulo} descricao={anime.descricao} urlImagem={anime.urlImagem} />
+                                </Box>
                             </Grid>
 
                         ))

@@ -41,8 +41,11 @@ export default function Profile({ animeData }) {
               </Grid>
             </Box>
             <Box width="100%">
-              <Divider>Episódios</Divider>
-              <AnimeTable episodiosData={episodios}></AnimeTable>
+              <Grid item xs={12} md={6}>
+
+                <Divider>Episódios</Divider>
+                <AnimeTable episodiosData={episodios}></AnimeTable>
+              </Grid>
             </Box>
           </Box>
         </Paper>

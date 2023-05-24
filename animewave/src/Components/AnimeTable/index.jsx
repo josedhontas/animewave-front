@@ -10,7 +10,7 @@ import { TableVirtuoso } from 'react-virtuoso';
 
 const columns = [
   {
-    width: 200,
+    width: 100,
     label: 'Número',
     dataKey: 'numero',
     numeric: false,
@@ -18,7 +18,7 @@ const columns = [
   {
     width: 200,
     label: 'Link',
-    dataKey: 'link',
+    datakey: 'link',
     numeric: false,
   },
 ];

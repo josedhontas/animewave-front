@@ -49,9 +49,7 @@ BootstrapDialogTitle.propTypes = {
 
 export default function AnimeDialog({ linkepisodio, onClose }) {
   const [open, setOpen] = React.useState(true);
-  linkepisodio = "https://lightspeedst.net/s3/mp4/death-note/sd/1.mp4";
 
-  
   const handleClose = () => {
     setOpen(false);
     onClose(); // Chama a função onClose fornecida como prop

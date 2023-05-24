@@ -20,6 +20,7 @@ export default function Profile({ animeData }) {
     setDialogOpen(false);
   };
 
+
   useEffect(() => {
     getEpisodios();
   }, []);
@@ -57,7 +58,7 @@ export default function Profile({ animeData }) {
                 <Divider>Episódios</Divider>
                 <AnimeTable episodiosData={episodios} onRowClick={handleDialogOpen} />
                 {dialogOpen && (
-                  <AnimeDialog link={selectedLink} onClose={handleDialogClose} />
+                  <AnimeDialog linkepisodio={selectedLink} onClose={handleDialogClose} />
                 )}
 
               </Grid>

@@ -47,23 +47,24 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function AnimeDialog({ linkepisodio }) {
+export default function AnimeDialog({ linkepisodio, onClose }) {
   const [open, setOpen] = React.useState(true);
+
+  
+  const handleClose = () => {
+    setOpen(false);
+    onClose(); // Chama a função onClose fornecida como prop
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  linkepisodio = "https://lightspeedst.net/s3/mp4/death-note/sd/2.mp4";
-
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+          AnimeWave
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <video controls>
@@ -73,7 +74,7 @@ export default function AnimeDialog({ linkepisodio }) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Save changes
+            Próximo(ainda nao funciona)
           </Button>
         </DialogActions>
       </BootstrapDialog>

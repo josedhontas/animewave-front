@@ -11,7 +11,6 @@ export default function Router() {
             <Routes>
                 <Route path='/' element={<Home setAnimeData={setAnimeData}/>} />
                 <Route path='/profile' element={<Profile animeData={animeData}/>} />
-                <Route path='/episodio' element={<AnimeDialog/>} />
 
             </Routes>
         </BrowserRouter>

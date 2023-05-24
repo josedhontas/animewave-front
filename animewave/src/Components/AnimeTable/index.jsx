@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -16,9 +16,8 @@ const columns = [
     numeric: false,
   },
   {
-    width: 200,
+    width: 100,
     label: 'Link',
-    datakey: 'link',
     numeric: false,
   },
 ];
@@ -55,13 +54,20 @@ function fixedHeaderContent() {
   );
 }
 
-function rowContent(_index, row) {
+function rowContent(_index, row, onRowClick) {
+  const handleClick = () => {
+    console.log(row.link);
+    onRowClick(row.link); // Chame a função de callback passando o link
+  };
+
   return (
     <React.Fragment>
       {columns.map((column) => (
         <TableCell
           key={column.dataKey}
           align={column.numeric ? 'right' : 'left'}
+          onClick={handleClick}
+          style={{ cursor: 'pointer' }}
         >
           {row[column.dataKey]}
         </TableCell>
@@ -70,14 +76,14 @@ function rowContent(_index, row) {
   );
 }
 
-export default function AnimeTable({ episodiosData }) {
+export default function AnimeTable({ episodiosData, onRowClick }) {
   return (
     <Paper style={{ height: 400, width: '100%' }}>
       <TableVirtuoso
         data={episodiosData}
         components={VirtuosoTableComponents}
         fixedHeaderContent={fixedHeaderContent}
-        itemContent={rowContent}
+        itemContent={(index, item) => rowContent(index, item, onRowClick)}
       />
     </Paper>
   );

@@ -3,10 +3,22 @@ import Navbar from '../Components/Navbar';
 import { Typography, Container, Box, Paper, Divider, Grid } from '@mui/material';
 import AnimeTable from '../Components/AnimeTable';
 import axios from 'axios';
+import AnimeDialog from '../Components/AnimeDialog';
 
 export default function Profile({ animeData }) {
   const { id, titulo, descricao, urlImagem } = animeData;
   const [episodios, setEpisodios] = useState([]);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState('');
+
+  const handleDialogOpen = (link) => {
+    setSelectedLink(link);
+    setDialogOpen(true);
+  };
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
 
   useEffect(() => {
     getEpisodios();
@@ -42,9 +54,12 @@ export default function Profile({ animeData }) {
             </Box>
             <Box width="100%">
               <Grid item xs={12} md={6}>
-
                 <Divider>Episódios</Divider>
-                <AnimeTable episodiosData={episodios}></AnimeTable>
+                <AnimeTable episodiosData={episodios} onRowClick={handleDialogOpen} />
+                {dialogOpen && (
+                  <AnimeDialog link={selectedLink} onClose={handleDialogClose} />
+                )}
+
               </Grid>
             </Box>
           </Box>

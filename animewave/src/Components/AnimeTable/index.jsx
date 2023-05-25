@@ -11,13 +11,12 @@ import { TableVirtuoso } from 'react-virtuoso';
 const columns = [
   {
     width: 100,
-    label: 'Episódio',
     dataKey: 'numero',
     numeric: false,
   },
   {
     width: 100,
-    label: 'Link',
+    dataKey: 'titulo',
     numeric: false,
   },
 ];

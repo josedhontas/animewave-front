@@ -27,7 +27,7 @@ export default function Profile({ animeData }) {
 
   const getEpisodios = () => {
     axios
-      .get(`https://apu.animewave.ninja/animes/${id}`)
+      .get(`http://localhost:8000/animes/${id}`)
       .then((res) => setEpisodios(res.data.episodios))
       .catch((err) => console.log(err));
   };

@@ -8,6 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import chihiro from './chihiro.mp4'
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -67,6 +68,7 @@ export default function AnimeDialog({ linkepisodio, onClose }) {
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <video controls>
+            
             <source src={linkepisodio} type="video/mp4" />
             Seu navegador não suporta a reprodução de vídeo.
           </video>

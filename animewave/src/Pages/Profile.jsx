@@ -6,13 +6,17 @@ import axios from 'axios';
 import AnimeDialog from '../Components/AnimeDialog';
 
 export default function Profile({ animeData }) {
-  const { id, titulo, descricao, urlImagem } = animeData;
+  const { id, titulo, descricao, urlImagem, ano, numeroEpisodios } = animeData;
   const [episodios, setEpisodios] = useState([]);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedLink, setSelectedLink] = useState('');
+  const [selectedTitle, setSelectedTitle] = useState('');
 
-  const handleDialogOpen = (link) => {
+
+  const handleDialogOpen = (link, titulo) => {
+    console.log(link)
     setSelectedLink(link);
+    setSelectedTitle(titulo)
     setDialogOpen(true);
   };
 
@@ -27,7 +31,7 @@ export default function Profile({ animeData }) {
 
   const getEpisodios = () => {
     axios
-      .get(`http://localhost:8000/animes/${id}`)
+      .get(`https://api.animewave.ninja/animes/${id}`)
       .then((res) => setEpisodios(res.data.episodios))
       .catch((err) => console.log(err));
   };
@@ -50,6 +54,12 @@ export default function Profile({ animeData }) {
                   <Typography variant="h6">
                     {descricao}
                   </Typography>
+                  <Typography variant="h6">
+                    Ano: {ano}
+                  </Typography>
+                  <Typography variant="h6">
+                    Episódios: {numeroEpisodios}
+                  </Typography>
                 </Grid>
               </Grid>
             </Box>
@@ -58,7 +68,7 @@ export default function Profile({ animeData }) {
                 <Divider>Episódios</Divider>
                 <AnimeTable episodiosData={episodios} onRowClick={handleDialogOpen} />
                 {dialogOpen && (
-                  <AnimeDialog linkepisodio={selectedLink} onClose={handleDialogClose} />
+                  <AnimeDialog linkepisodio={selectedLink} titulo={selectedTitle} onClose={handleDialogClose} />
                 )}
 
               </Grid>

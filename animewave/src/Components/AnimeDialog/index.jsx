@@ -47,7 +47,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function AnimeDialog({ linkepisodio, onClose }) {
+export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
   const [open, setOpen] = React.useState(true);
 
   const handleClose = () => {
@@ -58,12 +58,14 @@ export default function AnimeDialog({ linkepisodio, onClose }) {
   const handleClickOpen = () => {
     setOpen(true);
   };
+  
+  linkepisodio = "https://youtu.be/dQw4w9WgXcQ";
 
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          AnimeWave
+          {titulo}
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <video controls>
@@ -74,7 +76,7 @@ export default function AnimeDialog({ linkepisodio, onClose }) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Próximo(ainda nao funciona)
+            Próximo
           </Button>
         </DialogActions>
       </BootstrapDialog>

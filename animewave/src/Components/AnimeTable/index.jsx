@@ -56,7 +56,7 @@ function fixedHeaderContent() {
 function rowContent(_index, row, onRowClick) {
   const handleClick = () => {
     console.log(row.link);
-    onRowClick(row.link); // Chame a função de callback passando o link
+    onRowClick(row.link, row.titulo); 
   };
 
   return (

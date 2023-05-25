@@ -16,7 +16,7 @@ export default function Home({setAnimeData}) {
     }, [])
     const getAnimes = () => {
         axios
-            .get("http://localhost:8000/animes")
+            .get("https://api.animewave.ninja/animes")
             .then((res) => setAnimes(res.data))
             .catch((err) => console.log(err))
     }
@@ -42,6 +42,7 @@ export default function Home({setAnimeData}) {
 
     const animePickHandler = (anime) =>{
         setAnimeData(anime);
+        console.log(anime)
         navigate("/profile");
         
     }

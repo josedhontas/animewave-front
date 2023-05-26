@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar({animeFilter, hideSearch}) {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '2em' }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: 'black' }}>
         <Toolbar>
           <IconButton
             size="large"

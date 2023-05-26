@@ -48,7 +48,7 @@ export default function Home({setAnimeData}) {
     }
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#222222' }}>
             <Navbar animeFilter={animeFilter} />
             <Container maxWidth="false">
                 <Grid container spacing={3}>

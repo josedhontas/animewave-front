@@ -11,16 +11,19 @@ import CloseIcon from '@mui/icons-material/Close';
 import nevergonna from './nevergonna.mp4';
 import Grid from '@mui/material/Grid';
 
-
-
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiPaper-root': {
+    backgroundColor: '#222222', // 
+  },
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
+    color: '#ffffff', // Altere para a cor desejada do texto (branco)
   },
   '& .MuiDialogActions-root': {
     padding: theme.spacing(1),
   },
 }));
+
 
 function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
@@ -66,11 +69,11 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose} color="#F5F5F5">
           {titulo}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-        <Grid container justifyContent="center">
+          <Grid container justifyContent="center">
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <video controls autoPlay style={{ width: '100%', height: '100%' }}>
                 <source src={nevergonna} type="video/mp4" />
@@ -78,12 +81,19 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
               </video>
             </Grid>
           </Grid>
-
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
+          <Button
+            autoFocus
+            onClick={handleClose}
+            sx={{
+              color: 'white', // Altere para a cor desejada do texto
+
+            }}
+          >
             Próximo
           </Button>
+
         </DialogActions>
       </BootstrapDialog>
     </div>

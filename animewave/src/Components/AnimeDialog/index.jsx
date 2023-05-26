@@ -8,6 +8,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import nevergonna from './nevergonna.mp4';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -59,8 +60,6 @@ export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
     setOpen(true);
   };
   
-  linkepisodio = "https://youtu.be/dQw4w9WgXcQ";
-
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
@@ -70,7 +69,7 @@ export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
         <DialogContent dividers>
           <video controls>
             
-            <source src={linkepisodio} type="video/mp4" />
+            <source src={nevergonna} type="video/mp4" />
             Seu navegador não suporta a reprodução de vídeo.
           </video>
         </DialogContent>

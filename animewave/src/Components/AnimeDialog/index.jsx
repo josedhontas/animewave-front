@@ -9,6 +9,9 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import nevergonna from './nevergonna.mp4';
+import Grid from '@mui/material/Grid';
+
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -48,7 +51,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
+export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
   const [open, setOpen] = React.useState(true);
 
   const handleClose = () => {
@@ -59,7 +62,7 @@ export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
   const handleClickOpen = () => {
     setOpen(true);
   };
-  
+
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
@@ -67,11 +70,15 @@ export default function AnimeDialog({ linkepisodio,titulo, onClose }) {
           {titulo}
         </BootstrapDialogTitle>
         <DialogContent dividers>
-          <video controls>
-            
-            <source src={nevergonna} type="video/mp4" />
-            Seu navegador não suporta a reprodução de vídeo.
-          </video>
+        <Grid container justifyContent="center">
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <video controls autoPlay style={{ width: '100%', height: '100%' }}>
+                <source src={nevergonna} type="video/mp4" />
+                Seu navegador não suporta a reprodução de vídeo.
+              </video>
+            </Grid>
+          </Grid>
+
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>

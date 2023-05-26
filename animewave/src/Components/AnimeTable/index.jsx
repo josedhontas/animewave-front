@@ -26,7 +26,7 @@ const VirtuosoTableComponents = {
     <TableContainer component={Paper} {...props} ref={ref} />
   )),
   Table: (props) => (
-    <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
+    <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed', backgroundColor: '#0f0f0f' }} />
   ),
   TableHead,
   TableRow: ({ item: _item, ...props }) => <TableRow {...props} />,
@@ -43,7 +43,7 @@ function fixedHeaderContent() {
           align={column.numeric ? 'right' : 'left'}
           style={{ width: column.width }}
           sx={{
-            backgroundColor: 'background.paper',
+            backgroundColor: '#0f0f0f',
           }}
         >
           {column.label}
@@ -66,7 +66,7 @@ function rowContent(_index, row, onRowClick) {
           key={column.dataKey}
           align={column.numeric ? 'right' : 'left'}
           onClick={handleClick}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer', color: 'white' }}
         >
           {row[column.dataKey]}
         </TableCell>
@@ -77,7 +77,7 @@ function rowContent(_index, row, onRowClick) {
 
 export default function AnimeTable({ episodiosData, onRowClick }) {
   return (
-    <Paper style={{ height: 400, width: '100%' }}>
+    <Paper sx={{ backgroundColor: '#0f0f0f' }} style={{ height: 400, width: '100%' }}>
       <TableVirtuoso
         data={episodiosData}
         components={VirtuosoTableComponents}

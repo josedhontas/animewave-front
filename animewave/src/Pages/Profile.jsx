@@ -37,12 +37,12 @@ export default function Profile({ animeData }) {
   };
 
   return (
-    <>
-      <Navbar hideSearch />
+    <div style={{ backgroundColor: '#222222' }}>
+    <Navbar hideSearch />
       <Container maxWidth="md">
-        <Paper elevation={3}>
+      <Paper elevation={3} sx={{ backgroundColor: '#0f0f0f' }}>
           <Box display='flex' flexDirection="column" alignItems="center" p={5}>
-            <Typography variant="h5">
+            <Typography variant="h5" color ="#F5F5F5">
               {titulo}
             </Typography>
             <Box display="flex" width="100%">
@@ -51,13 +51,13 @@ export default function Profile({ animeData }) {
                   <Box component="img" src={urlImagem} width="100%" height="auto" paddingRight={4} />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Typography variant="h6">
+                  <Typography variant="h6" color ="#F5F5F5">
                     {descricao}
                   </Typography>
-                  <Typography variant="h6">
+                  <Typography variant="h6" color ="#F5F5F5">
                     Ano: {ano}
                   </Typography>
-                  <Typography variant="h6">
+                  <Typography variant="h6" color ="#F5F5F5">
                     Episódios: {numeroEpisodios}
                   </Typography>
                 </Grid>
@@ -65,7 +65,7 @@ export default function Profile({ animeData }) {
             </Box>
             <Box width="100%">
               <Grid item xs={12} md={6}>
-                <Divider>Episódios</Divider>
+                <Divider sx={{ color: '#F5F5F5' }}>Episódios</Divider>
                 <AnimeTable episodiosData={episodios} onRowClick={handleDialogOpen} />
                 {dialogOpen && (
                   <AnimeDialog linkepisodio={selectedLink} titulo={selectedTitle} onClose={handleDialogClose} />
@@ -76,6 +76,6 @@ export default function Profile({ animeData }) {
           </Box>
         </Paper>
       </Container>
-    </>
+    </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Home({setAnimeData}) {
     }, [])
     const getAnimes = () => {
         axios
-            .get("https://api.animewave.ninja/animes")
+            .get("https://apianimewave.josedhonatas.ninja/animes")
             .then((res) => setAnimes(res.data))
             .catch((err) => console.log(err))
     }

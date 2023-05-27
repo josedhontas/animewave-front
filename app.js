@@ -37,7 +37,7 @@ ball.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const movieListContainer = document.getElementById('movieList');
 
-  fetch('https://api.animewave.ninja/animes')
+  fetch('https://apianimewave.josedhonatas.ninja/animes')
     .then(response => response.json())
     .then(animes => {
       animes.forEach(anime => {

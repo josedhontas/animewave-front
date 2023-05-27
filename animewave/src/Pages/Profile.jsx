@@ -31,7 +31,7 @@ export default function Profile({ animeData }) {
 
   const getEpisodios = () => {
     axios
-      .get(`https://api.animewave.ninja/animes/${id}`)
+      .get(`https://apianimewave.josedhonatas.ninja/animes/${id}`)
       .then((res) => setEpisodios(res.data.episodios))
       .catch((err) => console.log(err));
   };

@@ -66,6 +66,8 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
     setOpen(true);
   };
 
+  linkepisodio = "https://apianimewave.josedhonatas.ninja/animes/video"
+
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
@@ -76,7 +78,7 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <video controls autoPlay style={{ width: '100%', height: '100%' }}>
-                <source src={nevergonna} type="video/mp4" />
+                <source src={linkepisodio} type="video/mp4" />
                 Seu navegador não suporta a reprodução de vídeo.
               </video>
             </Grid>

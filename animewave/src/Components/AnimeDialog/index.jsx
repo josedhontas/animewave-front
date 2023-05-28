@@ -66,7 +66,7 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
     setOpen(true);
   };
 
-  linkepisodio = "https://apianimewave.josedhonatas.ninja/animes/video"
+  linkepisodio = "https://animewave12.nyc3.digitaloceanspaces.com/A%20viagem%20de%20chihiro.mp4"
 
   return (
     <div>

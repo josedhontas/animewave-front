@@ -66,8 +66,7 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
     setOpen(true);
   };
 
-  //linkepisodio = "https://animewave12.nyc3.digitaloceanspaces.com/A%20viagem%20de%20chihiro.mp4"
-
+  linkepisodio = nevergonna
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>

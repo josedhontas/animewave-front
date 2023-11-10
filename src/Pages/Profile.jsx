@@ -31,7 +31,7 @@ export default function Profile({ animeData }) {
 
   const getEpisodios = () => {
     axios
-      .get(`https://movie-wave-vj27.onrender.com//animes/${id}`)
+      .get(`https://movie-wave-vj27.onrender.com/animes/${id}`)
       .then((res) => setEpisodios(res.data.episodios))
       .catch((err) => console.log(err));
   };

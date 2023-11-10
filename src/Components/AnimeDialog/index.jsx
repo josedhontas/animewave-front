@@ -66,7 +66,7 @@ export default function AnimeDialog({ linkepisodio, titulo, onClose }) {
     setOpen(true);
   };
 
-  linkepisodio = nevergonna
+  //linkepisodio = nevergonna
   return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>

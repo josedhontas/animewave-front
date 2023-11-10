@@ -16,7 +16,7 @@ export default function Home({setAnimeData}) {
     }, [])
     const getAnimes = () => {
         axios
-            .get("https://api.animewave.josedhonatas.ninja/animes")
+            .get("https://movie-wave-vj27.onrender.com//animes")
             .then((res) => setAnimes(res.data))
             .catch((err) => console.log(err))
     }
